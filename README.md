@@ -1,404 +1,255 @@
-<h1 align="center">Smart Traffic Management System (STMS)</h1>
+<div align="center">
 
-<p align="center">
-  AI-powered adaptive traffic control and violation monitoring system built using
-  <b>C++</b>, <b>Qt</b>, <b>OpenCV</b>, <b>YOLOv8</b>, and <b>Arduino</b>.
-</p>
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&pause=1000&color=2F81F7&center=true&vCenter=true&width=700&lines=Smart+Traffic+Light+Management+System" alt="Smart Traffic Light Management System" />
 
-<p align="center">
-  Developed as a second-semester BSAI Object-Oriented Programming project.
-</p>
+<p>A C++/Qt desktop application that uses YOLOv8 computer vision to dynamically<br>control traffic signals, detect red-light violations, and optimize intersection flow.</p>
 
-<hr>
+<br>
 
-<h2>Project Overview</h2>
+<img src="https://img.shields.io/badge/C++-C++17-00599C?style=for-the-badge&logo=cplusplus&logoColor=white" />
+<img src="https://img.shields.io/badge/Qt-5%2F6-41CD52?style=for-the-badge&logo=qt&logoColor=white" />
+<img src="https://img.shields.io/badge/OpenCV-4.11.0-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white" />
+<img src="https://img.shields.io/badge/YOLOv8-ONNX-FF6F00?style=for-the-badge" />
+<img src="https://img.shields.io/badge/Arduino-Hardware-00878F?style=for-the-badge&logo=arduino&logoColor=white" />
 
-<p>
-Traditional traffic systems rely on fixed timers that cannot adapt to changing
-road conditions. This often leads to:
-</p>
+<br><br>
 
-<ul>
-  <li>Unnecessary congestion</li>
-  <li>Increased waiting times</li>
-  <li>Fuel wastage</li>
-  <li>Poor traffic flow</li>
-  <li>Weak traffic violation enforcement</li>
-</ul>
+<img src="https://img.shields.io/badge/Status-Active%20Development-brightgreen?style=flat-square" />
+<img src="https://img.shields.io/badge/Semester-BSAI%202nd-blue?style=flat-square" />
+<img src="https://img.shields.io/badge/License-Educational-orange?style=flat-square" />
 
-<p>
-The <b>Smart Traffic Management System (STMS)</b> addresses these problems using
-real-time vehicle detection and adaptive signal timing.
-</p>
+<br><br>
 
-<p>
-Using live camera feeds and YOLOv8 object detection, the system analyzes traffic
-density at intersections and dynamically controls traffic lights accordingly.
-It also detects red-light violations and captures evidence automatically.
-</p>
+<a href="https://github.com/MuhammadAnasBilal/Smart_Traffic_Management_System">
+  <img src="https://img.shields.io/badge/View%20Repository-181717?style=for-the-badge&logo=github&logoColor=white" />
+</a>
 
-<p>
-This project combines:
-</p>
+</div>
 
-<ul>
-  <li>Artificial Intelligence</li>
-  <li>Computer Vision</li>
-  <li>Object-Oriented Programming</li>
-  <li>Embedded Systems</li>
-  <li>Real-Time Monitoring</li>
-</ul>
+---
 
-<hr>
+## Overview
 
-<h2>Core Features</h2>
+Traditional fixed-timer traffic lights cannot respond to actual road conditions — they waste time and fuel regardless of congestion. This system replaces that logic entirely.
 
-<h3>Adaptive Traffic Signal Control</h3>
+Live camera feeds are analyzed by a YOLOv8 model, counting and classifying vehicles per lane at a 4-way intersection. The application assigns green-light durations proportional to traffic density. When a vehicle runs a red light, the system flags it instantly, timestamps the event, and saves a snapshot as evidence. A physical Arduino connection drives real LED traffic lights from the same commands controlling the on-screen simulation.
 
-<p>
-Traffic light timings automatically adjust according to real-time vehicle density
-instead of relying on fixed timers.
-</p>
+Built as a 2nd-semester OOP project by four BSAI students, with equal contribution across backend logic, computer vision, UI, and hardware integration.
 
-<h3>Real-Time Vehicle Detection</h3>
+---
 
-<p>Uses YOLOv8 + OpenCV DNN to detect and count:</p>
-
-<ul>
-  <li>Cars</li>
-  <li>Trucks</li>
-  <li>Buses</li>
-  <li>Motorcycles</li>
-</ul>
-
-<p>from live video streams.</p>
-
-<h3>Red-Light Violation Detection</h3>
-
-<p>Automatically detects vehicles crossing during red signals and stores:</p>
-
-<ul>
-  <li>Violation timestamp</li>
-  <li>Captured evidence image</li>
-  <li>Violation logs</li>
-</ul>
-
-<h3>Arduino Integration</h3>
-
-<p>
-Supports physical traffic light simulation using Arduino and serial communication.
-</p>
-
-<h3>Multi-Road Intersection Support</h3>
-
-<p>
-Capable of monitoring and managing multiple roads simultaneously in a
-4-way intersection model.
-</p>
-
-<h3>Real-Time Monitoring Dashboard</h3>
-
-<p>Built using Qt GUI with:</p>
-
-<ul>
-  <li>Live camera feeds</li>
-  <li>Traffic statistics</li>
-  <li>Detection overlays</li>
-  <li>Signal states</li>
-  <li>System logs</li>
-</ul>
-
-<h3>Simulation & Testing Support</h3>
-
-<p>The system can operate with:</p>
-
-<ul>
-  <li>Real cameras</li>
-  <li>Video files</li>
-  <li>RTSP streams</li>
-  <li>Pure simulation mode</li>
-</ul>
-
-<hr>
-
-<h2>System Architecture</h2>
-
-<h3>1. Computer Vision Layer</h3>
-
-<p><b>Responsible for:</b></p>
-
-<ul>
-  <li>Vehicle detection</li>
-  <li>Vehicle counting</li>
-  <li>Density estimation</li>
-  <li>Frame processing</li>
-</ul>
-
-<p><b>Implemented using:</b></p>
-
-<ul>
-  <li>OpenCV</li>
-  <li>YOLOv8 ONNX model</li>
-</ul>
-
-<h3>2. Decision-Making Layer</h3>
-
-<p><b>Responsible for:</b></p>
-
-<ul>
-  <li>Traffic density analysis</li>
-  <li>Signal timing calculation</li>
-  <li>Traffic flow optimization</li>
-  <li>Violation logic</li>
-</ul>
-
-<p><b>Implemented using:</b></p>
-
-<ul>
-  <li>C++</li>
-  <li>Object-Oriented Programming principles</li>
-  <li>Qt backend logic</li>
-</ul>
-
-<h3>3. Hardware & Interface Layer</h3>
-
-<p><b>Responsible for:</b></p>
-
-<ul>
-  <li>GUI visualization</li>
-  <li>Arduino communication</li>
-  <li>Traffic signal simulation</li>
-  <li>User interaction</li>
-</ul>
-
-<p><b>Implemented using:</b></p>
-
-<ul>
-  <li>Qt Widgets</li>
-  <li>Qt SerialPort</li>
-  <li>Arduino</li>
-</ul>
-
-<hr>
-
-<h2>Tech Stack</h2>
-
-<ul>
-  <li>C++17</li>
-  <li>Qt 5/6</li>
-  <li>OpenCV 4.x</li>
-  <li>YOLOv8 (ONNX)</li>
-  <li>Arduino</li>
-  <li>Qt SerialPort</li>
-  <li>qmake</li>
-</ul>
-
-<hr>
-
-<h2>Installation</h2>
-
-<h3>Prerequisites</h3>
-
-<p>Before building the project, install:</p>
-
-<ul>
-  <li>Qt 5.15+ or Qt 6.x</li>
-  <li>OpenCV 4.x with DNN support</li>
-  <li>MSVC 2019/2022 (Windows) or GCC/Clang (Linux)</li>
-  <li>YOLOv8 ONNX model</li>
-</ul>
-
-<h3>Required Model Files</h3>
-
-<p>Place the following files inside the application directory:</p>
-
-<pre>
-yolov8n.onnx
-coco.names
-</pre>
-
-<h3>Clone Repository</h3>
-
-<pre>
-git clone https://github.com/MuhammadAnasBilal/Smart_Traffic_Management_System
-cd SmartTrafficManagementSystem
-</pre>
-
-<h3>Configure OpenCV Paths</h3>
-
-<p>Update OpenCV include/library paths inside:</p>
-
-<pre>
-project.pro
-</pre>
-
-<p>Example:</p>
-
-<pre>
-INCLUDEPATH += "C:/opencv/build/include"
-
-LIBS += -L"C:/opencv/build/x64/vc16/lib" -lopencv_world4110
-</pre>
-
-<h3>Build Project</h3>
-
-<pre>
-qmake
-make
-</pre>
-
-<p>Run:</p>
-
-<pre>
-./SmartTrafficSystem
-</pre>
-
-<hr>
-
-<h2>Usage</h2>
-
-<h3>Step 1 — Connect Camera Sources</h3>
-
-<ul>
-  <li>Webcam index</li>
-  <li>Video file</li>
-  <li>RTSP stream</li>
-</ul>
-
-<h3>Step 2 — Configure Arduino</h3>
-
-<ul>
-  <li>Serial COM port</li>
-  <li>Simulation mode</li>
-</ul>
-
-<h3>Step 3 — Start Traffic System</h3>
-
-<p>The system will:</p>
-
-<ul>
-  <li>Detect vehicles</li>
-  <li>Estimate traffic density</li>
-  <li>Control traffic lights dynamically</li>
-</ul>
-
-<h3>Step 4 — Monitor Violations</h3>
-
-<p>
-Violation events are automatically logged with evidence capture.
-</p>
-
-<hr>
-
-<h2>Traffic Density Logic</h2>
+## Features
 
 <table>
   <tr>
-    <th>Density Level</th>
-    <th>Vehicle Count</th>
-    <th>Green Signal Duration</th>
+    <td><b>&#128246; Adaptive Signal Timing</b></td>
+    <td>Green-light duration scales with real-time vehicle count and size — no fixed timers</td>
   </tr>
   <tr>
-    <td>OFF</td>
-    <td>0</td>
-    <td>5 sec</td>
+    <td><b>&#128065; YOLOv8 Detection</b></td>
+    <td>Identifies cars, buses, trucks, and motorcycles per lane using the ONNX model</td>
   </tr>
   <tr>
-    <td>LOW</td>
-    <td>1–3</td>
-    <td>8 sec</td>
+    <td><b>&#128200; Density Classification</b></td>
+    <td>Five-tier system from OFF to VERY HIGH drives lane priority decisions</td>
   </tr>
   <tr>
-    <td>MEDIUM</td>
-    <td>4–7</td>
-    <td>12 sec</td>
+    <td><b>&#9889; Energy Saving Mode</b></td>
+    <td>Signal deactivates automatically when no vehicles are detected in a lane</td>
   </tr>
   <tr>
-    <td>HIGH</td>
-    <td>8–12</td>
-    <td>18 sec</td>
+    <td><b>&#128247; Violation Detection</b></td>
+    <td>Flags red-light runners with timestamp and saved image evidence automatically</td>
   </tr>
   <tr>
-    <td>VERY HIGH</td>
-    <td>13+</td>
-    <td>25 sec</td>
+    <td><b>&#128268; Arduino Integration</b></td>
+    <td>Controls physical LED traffic lights via serial communication in real time</td>
+  </tr>
+  <tr>
+    <td><b>&#128507; 4-Way Intersection</b></td>
+    <td>Monitors all four roads simultaneously with independent density tracking</td>
+  </tr>
+  <tr>
+    <td><b>&#128187; Real-Time Dashboard</b></td>
+    <td>Live camera feeds, traffic metrics, violation log, and system events in one UI</td>
   </tr>
 </table>
 
-<p><b>Yellow Signal Duration:</b> 3 seconds</p>
+---
 
-<hr>
+## Tech Stack
 
-<h2>YOLO Configuration</h2>
+<div align="center">
 
-<pre>
-Confidence Threshold: 0.45
-NMS Threshold: 0.40
-</pre>
+| Layer | Technology |
+|---|---|
+| Language | C++ (C++17) |
+| GUI Framework | Qt 5.15+ / Qt 6.x — Widgets, SerialPort |
+| Computer Vision | OpenCV 4.11.0 — DNN module |
+| Detection Model | YOLOv8n — ONNX format |
+| Hardware | Arduino — serial communication |
+| Build System | qmake |
 
-<hr>
+</div>
 
-<h2>Project Structure</h2>
+---
 
-<pre>
-├── main.cpp
-├── mainwindow.h / .cpp / .ui
-├── trafficsystem.h / .cpp
-├── processingworker.h / .cpp
-├── traffic_types.h
-├── resources/
-├── yolov8n.onnx
-├── coco.names
-└── project.pro
-</pre>
+## Getting Started
 
-<hr>
+### Prerequisites
 
-<h2>Team Contribution</h2>
+- Qt 5.15+ or Qt 6.x
+- OpenCV 4.11.0 with DNN support
+- MSVC 2019/2022 (Windows) or GCC/Clang (Linux)
+- `yolov8n.onnx` and `coco.names` model files
 
-<p>
-This project was developed collaboratively by a team of BSAI students,
-where each member contributed across:
-</p>
+### Model Files
 
-<ul>
-  <li>Backend development</li>
-  <li>Computer vision integration</li>
-  <li>GUI design</li>
-  <li>Hardware communication</li>
-  <li>Testing and debugging</li>
-</ul>
+Place both files in the application directory before running:
 
-<h3>Team Members</h3>
+```
+yolov8n.onnx    —  YOLOv8 nano detection model
+coco.names      —  COCO dataset class labels
+```
 
-<ul>
-  <li>
-    <a href="https://github.com/MuhammadAnasBilal">Muhammad Anas Bilal</a>
-  </li>
-  <li>
-    <a href="https://github.com/eyadarshad">Eyad Arshad</a>
-  </li>
-  <li>
-    <a href="https://github.com/Shahzaib-Pervez">Shahzaib Pervez</a>
-  </li>
-</ul>
+### Build
 
-<hr>
+```bash
+# Clone the repository
+git clone https://github.com/MuhammadAnasBilal/Smart_Traffic_Management_System.git
+cd Smart_Traffic_Management_System
+```
 
-<h2>License</h2>
+Update OpenCV paths in `oopfinalproj.pro` to match your installation:
 
-<p>
-This project is developed for:
-</p>
+```pro
+INCLUDEPATH += "C:/opencv/build/include"
+LIBS += -L"C:/opencv/build/x64/vc16/lib" -lopencv_world4110
+```
 
-<ul>
-  <li>Educational purposes</li>
-  <li>Research purposes</li>
-  <li>Learning and experimentation</li>
-</ul>
+Build and run:
 
-<hr>
+```bash
+qmake oopfinalproj.pro
+make
+./SmartTrafficSystem
+```
 
-<h2>Project Status</h2>
+---
 
-<p><b>Active Development</b></p>
+## Usage
+
+| Step | Action | Description |
+|:---:|---|---|
+| 1 | **Connect Cameras** | Enter sources — device index, video file path, or RTSP stream URL |
+| 2 | **Configure Arduino** | Select a serial COM port, or enable simulation mode |
+| 3 | **Start System** | Begin the traffic management cycle from the dashboard |
+| 4 | **Adjust Settings** | Tune light durations, YOLO thresholds, and energy-saving behavior |
+| 5 | **Review Violations** | Browse infractions and captured image evidence in the log panel |
+
+---
+
+## Configuration
+
+**Traffic Light Timings**
+
+| Density | Vehicle Count | Green Duration |
+|---|:---:|:---:|
+| ⚫ OFF | 0 | 5s |
+| 🟢 LOW | 1 – 3 | 8s |
+| 🟡 MEDIUM | 4 – 7 | 12s |
+| 🟠 HIGH | 8 – 12 | 18s |
+| 🔴 VERY HIGH | 13+ | 25s |
+
+> Yellow light: `3s` (configurable) &nbsp;·&nbsp; Confidence threshold: `0.45` &nbsp;·&nbsp; NMS threshold: `0.4`
+
+---
+
+## Project Structure
+
+```
+├── main.cpp                    # Application entry point
+├── mainwindow.h/cpp/ui         # GUI interface
+├── trafficsystem.h/cpp         # Core traffic controller logic
+├── processingworker.h/cpp      # YOLO detection worker thread
+├── traffic_types.h             # Enums: TrafficLight, TrafficDensity
+└── oopfinalproj.pro            # Qt project file
+```
+
+---
+
+## Troubleshooting
+
+<details>
+<summary><b>System fails to initialize</b></summary>
+<br>
+Verify that <code>yolov8n.onnx</code> and <code>coco.names</code> are present in the application directory.
+</details>
+
+<details>
+<summary><b>Camera connection fails</b></summary>
+<br>
+Check device availability and system camera permissions.
+</details>
+
+<details>
+<summary><b>Arduino not detected</b></summary>
+<br>
+Confirm the correct COM port, install required drivers, or switch to simulation mode.
+</details>
+
+<details>
+<summary><b>Poor detection accuracy</b></summary>
+<br>
+Lower the YOLO confidence threshold, configure a Region of Interest (ROI), and ensure adequate lighting on the camera feed.
+</details>
+
+---
+
+## Team
+
+<div align="center">
+
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/MuhammadAnasBilal">
+        <img src="https://github.com/MuhammadAnasBilal.png" width="80" /><br><br>
+        <b>Muhammad Anas Bilal</b><br>
+        <sub>241478</sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/eyadarshad">
+        <img src="https://github.com/eyadarshad.png" width="80" /><br><br>
+        <b>Eyad Arshad</b><br>
+        <sub>241464</sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/Shahzaib-Pervez">
+        <img src="https://github.com/Shahzaib-Pervez.png" width="80" /><br><br>
+        <b>Shahzaib Pervez</b><br>
+        <sub>241392</sub>
+      </a>
+    </td>
+  </tr>
+</table>
+
+</div>
+
+---
+
+## Project Status
+
+<div align="center">
+
+<img src="https://img.shields.io/badge/%E2%97%8F%20Active%20Development-2ea44f?style=for-the-badge" />
+
+</div>
+
+---
+
+<div align="center">
+<sub>For educational and research purposes only &nbsp;·&nbsp; BSAI 2nd Semester OOP Project</sub>
+</div>

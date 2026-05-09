@@ -23,8 +23,34 @@
 <a href="https://github.com/MuhammadAnasBilal/Smart_Traffic_Management_System">
   <img src="https://img.shields.io/badge/View%20Repository-181717?style=for-the-badge&logo=github&logoColor=white" />
 </a>
+&nbsp;
+<a href="https://github.com/MuhammadAnasBilal/Smart_Traffic_Management_System/releases/download/v1.0.0/Smart-Traffic-System-v1.0.zip">
+  <img src="https://img.shields.io/badge/Download%20v1.0.0-%E2%AC%87%EF%B8%8F%2055.9%20MB-2ea44f?style=for-the-badge&logo=github&logoColor=white" />
+</a>
 
 </div>
+
+---
+
+## Download
+
+<div align="center">
+
+| Release | Platform | Size | Date |
+|:---:|:---:|:---:|:---:|
+| [**v1.0.0 — Initial Release**](https://github.com/MuhammadAnasBilal/Smart_Traffic_Management_System/releases/tag/v1.0.0) | Windows 64-bit | 55.9 MB | Jun 17, 2025 |
+
+<br>
+
+<a href="https://github.com/MuhammadAnasBilal/Smart_Traffic_Management_System/releases/download/v1.0.0/Smart-Traffic-System-v1.0.zip">
+  <img src="https://img.shields.io/badge/%E2%AC%87%EF%B8%8F%20Smart--Traffic--System--v1.0.zip-2ea44f?style=for-the-badge" />
+</a>
+
+</div>
+
+<br>
+
+> Extract the zip and run `SmartTrafficSystem.exe` — no installation required. Make sure `yolov8n.onnx` and `coco.names` are in the same directory before launching.
 
 ---
 
